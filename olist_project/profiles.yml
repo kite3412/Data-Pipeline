@@ -1,0 +1,6 @@
+olist_project:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: '../olist.db'

@@ -1,0 +1,70 @@
+version: 2
+
+models:
+
+# check total sale amount column in sales fact table is not empty and is more than zero
+# check order purchase timestamp and order delivered customer date column in sales fact table is not empty and is of type timestamp
+# check freight value column in sales fact table is not empty and is more than or equal zero
+# check paying type column in sales fact table is not empty and is one of the four: boleto, credit card, debit card, voucher
+
+  - name: fact_sales
+    columns:
+      - name: total_sale_amount
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: false
+      
+      - name: order_purchase_timestamp
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: timestamp
+              
+      - name: order_delivered_customer_date
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: timestamp
+
+      - name: freight_value
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: true
+
+      - name: payment_type
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_in_set:
+              value_set: ['boleto', 'credit_card', 'debit_card', 'voucher']
+
+# check review score column in reviews fact table is not empty and is between 1 and 5 inclusive
+
+  - name: fact_reviews
+    columns:
+      - name: review_score
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 5
+              inclusive: true
+
+# check product category column in product dimension table is not empty
+
+  - name: dim_product
+    columns:
+      - name: product_category
+        tests:
+          - not_null
+
+# check state column in customer dimension table is not empty
+
+  - name: dim_customer
+    columns:
+      - name: state
+        tests:
+          - not_null
