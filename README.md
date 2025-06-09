@@ -26,7 +26,7 @@ Data-Pipeline/
 4. Intall the dependecies: `pip install -r requirements.txt`
  
 ## Running the Pipeline
-1. Run *data_ingestion.py* to create a database file 
+1. Run **data_ingestion.py** to create a database file 
 
 2. `cd` into olist_project folder
 
@@ -38,7 +38,7 @@ Data-Pipeline/
 
 6. Run olist_data_analysis for data visualisation (kernel:group2)
 
-7. View the database file *olist.db* through DuckDB connection in DBeaver
+7. View the database file **olist.db** through DuckDB connection in DBeaver
 
 ## Contact
 Feel free to contact me at jinbowen3412@gmail.com if you have any question regarding this project.
