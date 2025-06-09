@@ -40,3 +40,5 @@ Data-Pipeline/
 
 ## Contact
 Feel free to contact me at jinbowen3412@gmail.com if you have any question regarding this project.
+
+Check out my LinkedIn page at https://www.linkedin.com/in/jin-bowen-548992340/
