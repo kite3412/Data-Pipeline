@@ -1,7 +1,7 @@
 ## Description
 This is a group project that built a simple data pipeline that ingest the Brazilian E-commerce dataset from Kaggle into DuckDB, transformed the dataset into star schema using dbt, validate the transformed data using dbt utils and dbt expectations, use the star schema for data visualisation to produce meaningful insights.
 
-## Contribution
+## Acknowledgement
 Special thanks to Hugo, Stewart, Wang Jing and Rubiyah for their contributions to this project.
 
 ## Project Structure
